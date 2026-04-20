@@ -1,0 +1,1610 @@
+{
+  "arabicLetters": [
+    {
+      "id": 1,
+      "arabic": "ا",
+      "name": "أَلِف",
+      "nameUz": "Alif",
+      "transliteration": "ā / a",
+      "pronunciation": "O'zbekcha 'a' tovushi kabi",
+      "forms": {
+        "isolated": "ا",
+        "initial": "اَ",
+        "medial": "ـا",
+        "final": "ـا"
+      },
+      "exampleWord": "أَب",
+      "exampleMeaning": "ota",
+      "exampleTranslit": "ab",
+      "category": "moon",
+      "description": "Arab alifbosining birinchi harfi. Unli tovush belgisi."
+    },
+    {
+      "id": 2,
+      "arabic": "ب",
+      "name": "بَاء",
+      "nameUz": "Ba",
+      "transliteration": "b",
+      "pronunciation": "O'zbekcha 'b' tovushi",
+      "forms": {
+        "isolated": "ب",
+        "initial": "بـ",
+        "medial": "ـبـ",
+        "final": "ـب"
+      },
+      "exampleWord": "بَيْت",
+      "exampleMeaning": "uy",
+      "exampleTranslit": "bayt",
+      "category": "moon",
+      "description": "Pastki nuqtasi bilan ajralib turadi."
+    },
+    {
+      "id": 3,
+      "arabic": "ت",
+      "name": "تَاء",
+      "nameUz": "Ta",
+      "transliteration": "t",
+      "pronunciation": "O'zbekcha 't' tovushi",
+      "forms": {
+        "isolated": "ت",
+        "initial": "تـ",
+        "medial": "ـتـ",
+        "final": "ـت"
+      },
+      "exampleWord": "تُفَّاح",
+      "exampleMeaning": "olma",
+      "exampleTranslit": "tuffāḥ",
+      "category": "moon",
+      "description": "Ustida ikkita nuqta bor."
+    },
+    {
+      "id": 4,
+      "arabic": "ث",
+      "name": "ثَاء",
+      "nameUz": "Tha",
+      "transliteration": "th",
+      "pronunciation": "Inglizcha 'th' kabi (think)",
+      "forms": {
+        "isolated": "ث",
+        "initial": "ثـ",
+        "medial": "ـثـ",
+        "final": "ـث"
+      },
+      "exampleWord": "ثَلَاثَة",
+      "exampleMeaning": "uch",
+      "exampleTranslit": "thalātha",
+      "category": "moon",
+      "description": "Ustida uchta nuqta bor."
+    },
+    {
+      "id": 5,
+      "arabic": "ج",
+      "name": "جِيم",
+      "nameUz": "Jim",
+      "transliteration": "j",
+      "pronunciation": "O'zbekcha 'j' tovushi",
+      "forms": {
+        "isolated": "ج",
+        "initial": "جـ",
+        "medial": "ـجـ",
+        "final": "ـج"
+      },
+      "exampleWord": "جَمَال",
+      "exampleMeaning": "go'zallik",
+      "exampleTranslit": "jamāl",
+      "category": "moon",
+      "description": "Ichida nuqtasi bor harakat belgisi."
+    },
+    {
+      "id": 6,
+      "arabic": "ح",
+      "name": "حَاء",
+      "nameUz": "Ha (og'ir)",
+      "transliteration": "ḥ",
+      "pronunciation": "Tomoqdan chiqadigan kuchli 'h'",
+      "forms": {
+        "isolated": "ح",
+        "initial": "حـ",
+        "medial": "ـحـ",
+        "final": "ـح"
+      },
+      "exampleWord": "حُبّ",
+      "exampleMeaning": "muhabbat",
+      "exampleTranslit": "ḥubb",
+      "category": "moon",
+      "description": "Nuqtasiz, tomoqdan chiqadigan 'h' tovushi."
+    },
+    {
+      "id": 7,
+      "arabic": "خ",
+      "name": "خَاء",
+      "nameUz": "Kha",
+      "transliteration": "kh",
+      "pronunciation": "O'zbekcha 'x' yoki 'xo'\" kabi",
+      "forms": {
+        "isolated": "خ",
+        "initial": "خـ",
+        "medial": "ـخـ",
+        "final": "ـخ"
+      },
+      "exampleWord": "خُبْز",
+      "exampleMeaning": "non",
+      "exampleTranslit": "khubz",
+      "category": "moon",
+      "description": "Ustida nuqtasi bor."
+    },
+    {
+      "id": 8,
+      "arabic": "د",
+      "name": "دَال",
+      "nameUz": "Dal",
+      "transliteration": "d",
+      "pronunciation": "O'zbekcha 'd' tovushi",
+      "forms": {
+        "isolated": "د",
+        "initial": "دَ",
+        "medial": "ـد",
+        "final": "ـد"
+      },
+      "exampleWord": "دَرْس",
+      "exampleMeaning": "dars",
+      "exampleTranslit": "dars",
+      "category": "moon",
+      "description": "Faqat oldingi harf bilan birikadi."
+    },
+    {
+      "id": 9,
+      "arabic": "ذ",
+      "name": "ذَال",
+      "nameUz": "Dhal",
+      "transliteration": "dh",
+      "pronunciation": "Inglizcha 'th' kabi (the)",
+      "forms": {
+        "isolated": "ذ",
+        "initial": "ذَ",
+        "medial": "ـذ",
+        "final": "ـذ"
+      },
+      "exampleWord": "ذَهَب",
+      "exampleMeaning": "oltin / ketdi",
+      "exampleTranslit": "dhahab / dhahaba",
+      "category": "moon",
+      "description": "Ustida nuqtasi bor."
+    },
+    {
+      "id": 10,
+      "arabic": "ر",
+      "name": "رَاء",
+      "nameUz": "Ra",
+      "transliteration": "r",
+      "pronunciation": "Titroq 'r' tovushi",
+      "forms": {
+        "isolated": "ر",
+        "initial": "رَ",
+        "medial": "ـر",
+        "final": "ـر"
+      },
+      "exampleWord": "رَجُل",
+      "exampleMeaning": "erkak",
+      "exampleTranslit": "rajul",
+      "category": "sun",
+      "description": "Faqat oldingi harf bilan birikadi."
+    },
+    {
+      "id": 11,
+      "arabic": "ز",
+      "name": "زَاي",
+      "nameUz": "Zayn",
+      "transliteration": "z",
+      "pronunciation": "O'zbekcha 'z' tovushi",
+      "forms": {
+        "isolated": "ز",
+        "initial": "زَ",
+        "medial": "ـز",
+        "final": "ـز"
+      },
+      "exampleWord": "زَهْرَة",
+      "exampleMeaning": "gul",
+      "exampleTranslit": "zahra",
+      "category": "sun",
+      "description": "Ustida nuqtasi bor."
+    },
+    {
+      "id": 12,
+      "arabic": "س",
+      "name": "سِين",
+      "nameUz": "Sin",
+      "transliteration": "s",
+      "pronunciation": "O'zbekcha 's' tovushi",
+      "forms": {
+        "isolated": "س",
+        "initial": "سـ",
+        "medial": "ـسـ",
+        "final": "ـس"
+      },
+      "exampleWord": "سَمَاء",
+      "exampleMeaning": "osmon",
+      "exampleTranslit": "samā'",
+      "category": "sun",
+      "description": "Uchta tishi bor shakli bilan taniladi."
+    },
+    {
+      "id": 13,
+      "arabic": "ش",
+      "name": "شِين",
+      "nameUz": "Shin",
+      "transliteration": "sh",
+      "pronunciation": "O'zbekcha 'sh' tovushi",
+      "forms": {
+        "isolated": "ش",
+        "initial": "شـ",
+        "medial": "ـشـ",
+        "final": "ـش"
+      },
+      "exampleWord": "شَمْس",
+      "exampleMeaning": "quyosh",
+      "exampleTranslit": "shams",
+      "category": "sun",
+      "description": "Sin ustida uchta nuqta bor."
+    },
+    {
+      "id": 14,
+      "arabic": "ص",
+      "name": "صَاد",
+      "nameUz": "Sad",
+      "transliteration": "ṣ",
+      "pronunciation": "Og'ir 's' tovushi",
+      "forms": {
+        "isolated": "ص",
+        "initial": "صـ",
+        "medial": "ـصـ",
+        "final": "ـص"
+      },
+      "exampleWord": "صَبَاح",
+      "exampleMeaning": "ertalab",
+      "exampleTranslit": "ṣabāḥ",
+      "category": "sun",
+      "description": "Og'ir undosh, til orqaga tortiladi."
+    },
+    {
+      "id": 15,
+      "arabic": "ض",
+      "name": "ضَاد",
+      "nameUz": "Dad",
+      "transliteration": "ḍ",
+      "pronunciation": "Og'ir 'd' tovushi",
+      "forms": {
+        "isolated": "ض",
+        "initial": "ضـ",
+        "medial": "ـضـ",
+        "final": "ـض"
+      },
+      "exampleWord": "ضَوْء",
+      "exampleMeaning": "nur, yorug'lik",
+      "exampleTranslit": "ḍaw'",
+      "category": "sun",
+      "description": "Arab tilining maxsus harfi."
+    },
+    {
+      "id": 16,
+      "arabic": "ط",
+      "name": "طَاء",
+      "nameUz": "Ta (og'ir)",
+      "transliteration": "ṭ",
+      "pronunciation": "Og'ir 't' tovushi",
+      "forms": {
+        "isolated": "ط",
+        "initial": "طـ",
+        "medial": "ـطـ",
+        "final": "ـط"
+      },
+      "exampleWord": "طِفْل",
+      "exampleMeaning": "bola",
+      "exampleTranslit": "ṭifl",
+      "category": "sun",
+      "description": "Og'ir undosh."
+    },
+    {
+      "id": 17,
+      "arabic": "ظ",
+      "name": "ظَاء",
+      "nameUz": "Dha (og'ir)",
+      "transliteration": "ẓ",
+      "pronunciation": "Og'ir 'dh' tovushi",
+      "forms": {
+        "isolated": "ظ",
+        "initial": "ظـ",
+        "medial": "ـظـ",
+        "final": "ـظ"
+      },
+      "exampleWord": "ظُهْر",
+      "exampleMeaning": "tush payti",
+      "exampleTranslit": "ẓuhr",
+      "category": "sun",
+      "description": "Og'ir, til tish ortiga tegib aytiladi."
+    },
+    {
+      "id": 18,
+      "arabic": "ع",
+      "name": "عَيْن",
+      "nameUz": "Ayn",
+      "transliteration": "'",
+      "pronunciation": "Tomoqdan chiqadigan maxsus tovush",
+      "forms": {
+        "isolated": "ع",
+        "initial": "عـ",
+        "medial": "ـعـ",
+        "final": "ـع"
+      },
+      "exampleWord": "عَيْن",
+      "exampleMeaning": "ko'z / buloq",
+      "exampleTranslit": "'ayn",
+      "category": "moon",
+      "description": "Arab tilining eng maxsus harflaridan biri."
+    },
+    {
+      "id": 19,
+      "arabic": "غ",
+      "name": "غَيْن",
+      "nameUz": "Ghayn",
+      "transliteration": "gh",
+      "pronunciation": "Frantsuzcha 'r' ga o'xshash tovush",
+      "forms": {
+        "isolated": "غ",
+        "initial": "غـ",
+        "medial": "ـغـ",
+        "final": "ـغ"
+      },
+      "exampleWord": "غُرْفَة",
+      "exampleMeaning": "xona",
+      "exampleTranslit": "ghurfa",
+      "category": "moon",
+      "description": "Ustida nuqtasi bor."
+    },
+    {
+      "id": 20,
+      "arabic": "ف",
+      "name": "فَاء",
+      "nameUz": "Fa",
+      "transliteration": "f",
+      "pronunciation": "O'zbekcha 'f' tovushi",
+      "forms": {
+        "isolated": "ف",
+        "initial": "فـ",
+        "medial": "ـفـ",
+        "final": "ـف"
+      },
+      "exampleWord": "فِيل",
+      "exampleMeaning": "fil",
+      "exampleTranslit": "fīl",
+      "category": "moon",
+      "description": "Ustida bitta nuqta bor."
+    },
+    {
+      "id": 21,
+      "arabic": "ق",
+      "name": "قَاف",
+      "nameUz": "Qaf",
+      "transliteration": "q",
+      "pronunciation": "O'zbekcha 'q' tovushi (chuqur)",
+      "forms": {
+        "isolated": "ق",
+        "initial": "قـ",
+        "medial": "ـقـ",
+        "final": "ـق"
+      },
+      "exampleWord": "قَمَر",
+      "exampleMeaning": "oy",
+      "exampleTranslit": "qamar",
+      "category": "moon",
+      "description": "Ustida ikkita nuqta bor, chuqur 'q'."
+    },
+    {
+      "id": 22,
+      "arabic": "ك",
+      "name": "كَاف",
+      "nameUz": "Kaf",
+      "transliteration": "k",
+      "pronunciation": "O'zbekcha 'k' tovushi",
+      "forms": {
+        "isolated": "ك",
+        "initial": "كـ",
+        "medial": "ـكـ",
+        "final": "ـك"
+      },
+      "exampleWord": "كِتَاب",
+      "exampleMeaning": "kitob",
+      "exampleTranslit": "kitāb",
+      "category": "moon",
+      "description": "Ichida chiziqchasi bor."
+    },
+    {
+      "id": 23,
+      "arabic": "ل",
+      "name": "لَام",
+      "nameUz": "Lam",
+      "transliteration": "l",
+      "pronunciation": "O'zbekcha 'l' tovushi",
+      "forms": {
+        "isolated": "ل",
+        "initial": "لـ",
+        "medial": "ـلـ",
+        "final": "ـل"
+      },
+      "exampleWord": "لَيْل",
+      "exampleMeaning": "kecha, tun",
+      "exampleTranslit": "layl",
+      "category": "moon",
+      "description": "Alif bilan birgalikda 'lā' (لا) shaklini hosil qiladi."
+    },
+    {
+      "id": 24,
+      "arabic": "م",
+      "name": "مِيم",
+      "nameUz": "Mim",
+      "transliteration": "m",
+      "pronunciation": "O'zbekcha 'm' tovushi",
+      "forms": {
+        "isolated": "م",
+        "initial": "مـ",
+        "medial": "ـمـ",
+        "final": "ـم"
+      },
+      "exampleWord": "مَاء",
+      "exampleMeaning": "suv",
+      "exampleTranslit": "mā'",
+      "category": "moon",
+      "description": "Dumaloq shakli bilan ajralib turadi."
+    },
+    {
+      "id": 25,
+      "arabic": "ن",
+      "name": "نُون",
+      "nameUz": "Nun",
+      "transliteration": "n",
+      "pronunciation": "O'zbekcha 'n' tovushi",
+      "forms": {
+        "isolated": "ن",
+        "initial": "نـ",
+        "medial": "ـنـ",
+        "final": "ـن"
+      },
+      "exampleWord": "نَهْر",
+      "exampleMeaning": "daryo",
+      "exampleTranslit": "nahr",
+      "category": "sun",
+      "description": "Ustida bitta nuqta bor."
+    },
+    {
+      "id": 26,
+      "arabic": "ه",
+      "name": "هَاء",
+      "nameUz": "Ha",
+      "transliteration": "h",
+      "pronunciation": "O'zbekcha 'h' tovushi (yengil)",
+      "forms": {
+        "isolated": "ه",
+        "initial": "هـ",
+        "medial": "ـهـ",
+        "final": "ـه"
+      },
+      "exampleWord": "هَوَاء",
+      "exampleMeaning": "havo",
+      "exampleTranslit": "hawā'",
+      "category": "moon",
+      "description": "Turli shakllarda yoziladi."
+    },
+    {
+      "id": 27,
+      "arabic": "و",
+      "name": "وَاو",
+      "nameUz": "Waw",
+      "transliteration": "w / ū",
+      "pronunciation": "O'zbekcha 'v' yoki 'u' tovushi",
+      "forms": {
+        "isolated": "و",
+        "initial": "وَ",
+        "medial": "ـو",
+        "final": "ـو"
+      },
+      "exampleWord": "وَرْد",
+      "exampleMeaning": "atirgul",
+      "exampleTranslit": "ward",
+      "category": "moon",
+      "description": "Ham undosh (w) ham unli (ū) vazifasini bajaradi."
+    },
+    {
+      "id": 28,
+      "arabic": "ي",
+      "name": "يَاء",
+      "nameUz": "Ya",
+      "transliteration": "y / ī",
+      "pronunciation": "O'zbekcha 'y' yoki 'i' tovushi",
+      "forms": {
+        "isolated": "ي",
+        "initial": "يـ",
+        "medial": "ـيـ",
+        "final": "ـي"
+      },
+      "exampleWord": "يَوْم",
+      "exampleMeaning": "kun",
+      "exampleTranslit": "yawm",
+      "category": "moon",
+      "description": "Ham undosh (y) ham unli (ī) vazifasini bajaradi."
+    }
+  ],
+  "wordCategories": [
+    "Salomlashish",
+    "Raqamlar",
+    "Ranglar",
+    "Oila",
+    "Taom",
+    "Kundalik hayot",
+    "Tabiat",
+    "Vaqt"
+  ],
+  "arabicWords": [
+    {
+      "id": 1,
+      "arabic": "السَّلَامُ عَلَيْكُم",
+      "transliteration": "as-salāmu alaykum",
+      "uzbek": "Salom (tinchlik siz bilan bo'lsin)",
+      "english": "Peace be upon you",
+      "category": "Salomlashish",
+      "level": "beginner",
+      "example": "— السَّلَامُ عَلَيْكُم! — وَعَلَيْكُمُ السَّلَام",
+      "exampleTranslit": "— As-salāmu alaykum! — Wa alaykum as-salām",
+      "exampleUz": "— Salom! — Va alaykum salom!"
+    },
+    {
+      "id": 2,
+      "arabic": "مَرْحَبًا",
+      "transliteration": "marḥaban",
+      "uzbek": "Xush kelibsiz / Salom",
+      "english": "Welcome / Hello",
+      "category": "Salomlashish",
+      "level": "beginner"
+    },
+    {
+      "id": 3,
+      "arabic": "كَيْفَ حَالُك",
+      "transliteration": "kayfa ḥāluk",
+      "uzbek": "Yaxshimisiz?",
+      "english": "How are you?",
+      "category": "Salomlashish",
+      "level": "beginner"
+    },
+    {
+      "id": 4,
+      "arabic": "بِخَيْر، شُكْرًا",
+      "transliteration": "bi-khayr, shukran",
+      "uzbek": "Yaxshi, rahmat",
+      "english": "Fine, thank you",
+      "category": "Salomlashish",
+      "level": "beginner"
+    },
+    {
+      "id": 5,
+      "arabic": "مَعَ السَّلَامَة",
+      "transliteration": "ma'a s-salāma",
+      "uzbek": "Xayr / Sog'-salomat boring",
+      "english": "Goodbye",
+      "category": "Salomlashish",
+      "level": "beginner"
+    },
+    {
+      "id": 6,
+      "arabic": "صَبَاحُ الخَيْر",
+      "transliteration": "ṣabāḥu l-khayr",
+      "uzbek": "Xayrli tong",
+      "english": "Good morning",
+      "category": "Salomlashish",
+      "level": "beginner"
+    },
+    {
+      "id": 7,
+      "arabic": "مَسَاءُ الخَيْر",
+      "transliteration": "masā'u l-khayr",
+      "uzbek": "Xayrli kech",
+      "english": "Good evening",
+      "category": "Salomlashish",
+      "level": "beginner"
+    },
+    {
+      "id": 8,
+      "arabic": "شُكْرًا جَزِيلًا",
+      "transliteration": "shukran jazīlan",
+      "uzbek": "Katta rahmat",
+      "english": "Thank you very much",
+      "category": "Salomlashish",
+      "level": "beginner"
+    },
+    {
+      "id": 9,
+      "arabic": "وَاحِد",
+      "transliteration": "wāḥid",
+      "uzbek": "bir",
+      "english": "one",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 10,
+      "arabic": "اثْنَان",
+      "transliteration": "ithnān",
+      "uzbek": "ikki",
+      "english": "two",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 11,
+      "arabic": "ثَلَاثَة",
+      "transliteration": "thalātha",
+      "uzbek": "uch",
+      "english": "three",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 12,
+      "arabic": "أَرْبَعَة",
+      "transliteration": "arba'a",
+      "uzbek": "to'rt",
+      "english": "four",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 13,
+      "arabic": "خَمْسَة",
+      "transliteration": "khamsa",
+      "uzbek": "besh",
+      "english": "five",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 14,
+      "arabic": "سِتَّة",
+      "transliteration": "sitta",
+      "uzbek": "olti",
+      "english": "six",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 15,
+      "arabic": "سَبْعَة",
+      "transliteration": "sab'a",
+      "uzbek": "yetti",
+      "english": "seven",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 16,
+      "arabic": "ثَمَانِيَة",
+      "transliteration": "thamāniya",
+      "uzbek": "sakkiz",
+      "english": "eight",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 17,
+      "arabic": "تِسْعَة",
+      "transliteration": "tis'a",
+      "uzbek": "to'qqiz",
+      "english": "nine",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 18,
+      "arabic": "عَشَرَة",
+      "transliteration": "'ashara",
+      "uzbek": "o'n",
+      "english": "ten",
+      "category": "Raqamlar",
+      "level": "beginner"
+    },
+    {
+      "id": 19,
+      "arabic": "أَحْمَر",
+      "transliteration": "aḥmar",
+      "uzbek": "qizil",
+      "english": "red",
+      "category": "Ranglar",
+      "level": "beginner"
+    },
+    {
+      "id": 20,
+      "arabic": "أَزْرَق",
+      "transliteration": "azraq",
+      "uzbek": "ko'k",
+      "english": "blue",
+      "category": "Ranglar",
+      "level": "beginner"
+    },
+    {
+      "id": 21,
+      "arabic": "أَخْضَر",
+      "transliteration": "akhḍar",
+      "uzbek": "yashil",
+      "english": "green",
+      "category": "Ranglar",
+      "level": "beginner"
+    },
+    {
+      "id": 22,
+      "arabic": "أَصْفَر",
+      "transliteration": "aṣfar",
+      "uzbek": "sariq",
+      "english": "yellow",
+      "category": "Ranglar",
+      "level": "beginner"
+    },
+    {
+      "id": 23,
+      "arabic": "أَبْيَض",
+      "transliteration": "abyaḍ",
+      "uzbek": "oq",
+      "english": "white",
+      "category": "Ranglar",
+      "level": "beginner"
+    },
+    {
+      "id": 24,
+      "arabic": "أَسْوَد",
+      "transliteration": "aswad",
+      "uzbek": "qora",
+      "english": "black",
+      "category": "Ranglar",
+      "level": "beginner"
+    },
+    {
+      "id": 25,
+      "arabic": "بُرْتُقَالِي",
+      "transliteration": "burtuqālī",
+      "uzbek": "to'q sariq (apelsin rangi)",
+      "english": "orange",
+      "category": "Ranglar",
+      "level": "intermediate"
+    },
+    {
+      "id": 26,
+      "arabic": "بَنَفْسَجِي",
+      "transliteration": "banafsajī",
+      "uzbek": "binafsha rangi",
+      "english": "purple",
+      "category": "Ranglar",
+      "level": "intermediate"
+    },
+    {
+      "id": 27,
+      "arabic": "أَب",
+      "transliteration": "ab",
+      "uzbek": "ota",
+      "english": "father",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 28,
+      "arabic": "أُمّ",
+      "transliteration": "umm",
+      "uzbek": "ona",
+      "english": "mother",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 29,
+      "arabic": "أَخ",
+      "transliteration": "akh",
+      "uzbek": "aka / uka",
+      "english": "brother",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 30,
+      "arabic": "أُخْت",
+      "transliteration": "ukht",
+      "uzbek": "opa / singil",
+      "english": "sister",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 31,
+      "arabic": "جَدّ",
+      "transliteration": "jadd",
+      "uzbek": "bobo",
+      "english": "grandfather",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 32,
+      "arabic": "جَدَّة",
+      "transliteration": "jadda",
+      "uzbek": "buvi",
+      "english": "grandmother",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 33,
+      "arabic": "ابْن",
+      "transliteration": "ibn",
+      "uzbek": "o'g'il",
+      "english": "son",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 34,
+      "arabic": "بِنْت",
+      "transliteration": "bint",
+      "uzbek": "qiz",
+      "english": "daughter",
+      "category": "Oila",
+      "level": "beginner"
+    },
+    {
+      "id": 35,
+      "arabic": "مَاء",
+      "transliteration": "mā'",
+      "uzbek": "suv",
+      "english": "water",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 36,
+      "arabic": "خُبْز",
+      "transliteration": "khubz",
+      "uzbek": "non",
+      "english": "bread",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 37,
+      "arabic": "لَحْم",
+      "transliteration": "laḥm",
+      "uzbek": "go'sht",
+      "english": "meat",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 38,
+      "arabic": "أَرُزّ",
+      "transliteration": "aruzz",
+      "uzbek": "guruch / sholi",
+      "english": "rice",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 39,
+      "arabic": "شَاي",
+      "transliteration": "shāy",
+      "uzbek": "choy",
+      "english": "tea",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 40,
+      "arabic": "قَهْوَة",
+      "transliteration": "qahwa",
+      "uzbek": "qahva",
+      "english": "coffee",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 41,
+      "arabic": "تُفَّاح",
+      "transliteration": "tuffāḥ",
+      "uzbek": "olma",
+      "english": "apple",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 42,
+      "arabic": "مَوْز",
+      "transliteration": "mawz",
+      "uzbek": "banan",
+      "english": "banana",
+      "category": "Taom",
+      "level": "beginner"
+    },
+    {
+      "id": 43,
+      "arabic": "مَدْرَسَة",
+      "transliteration": "madrasa",
+      "uzbek": "maktab",
+      "english": "school",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 44,
+      "arabic": "كِتَاب",
+      "transliteration": "kitāb",
+      "uzbek": "kitob",
+      "english": "book",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 45,
+      "arabic": "قَلَم",
+      "transliteration": "qalam",
+      "uzbek": "qalam",
+      "english": "pen",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 46,
+      "arabic": "بَيْت",
+      "transliteration": "bayt",
+      "uzbek": "uy",
+      "english": "house",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 47,
+      "arabic": "سَيَّارَة",
+      "transliteration": "sayyāra",
+      "uzbek": "mashina",
+      "english": "car",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 48,
+      "arabic": "هَاتِف",
+      "transliteration": "hātif",
+      "uzbek": "telefon",
+      "english": "telephone",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 49,
+      "arabic": "مَسْجِد",
+      "transliteration": "masjid",
+      "uzbek": "masjid",
+      "english": "mosque",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 50,
+      "arabic": "طَرِيق",
+      "transliteration": "ṭarīq",
+      "uzbek": "yo'l",
+      "english": "road/way",
+      "category": "Kundalik hayot",
+      "level": "beginner"
+    },
+    {
+      "id": 51,
+      "arabic": "شَمْس",
+      "transliteration": "shams",
+      "uzbek": "quyosh",
+      "english": "sun",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 52,
+      "arabic": "قَمَر",
+      "transliteration": "qamar",
+      "uzbek": "oy",
+      "english": "moon",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 53,
+      "arabic": "نَجْم",
+      "transliteration": "najm",
+      "uzbek": "yulduz",
+      "english": "star",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 54,
+      "arabic": "سَمَاء",
+      "transliteration": "samā'",
+      "uzbek": "osmon",
+      "english": "sky",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 55,
+      "arabic": "بَحْر",
+      "transliteration": "baḥr",
+      "uzbek": "dengiz",
+      "english": "sea",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 56,
+      "arabic": "جَبَل",
+      "transliteration": "jabal",
+      "uzbek": "tog'",
+      "english": "mountain",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 57,
+      "arabic": "نَهْر",
+      "transliteration": "nahr",
+      "uzbek": "daryo",
+      "english": "river",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 58,
+      "arabic": "زَهْرَة",
+      "transliteration": "zahra",
+      "uzbek": "gul",
+      "english": "flower",
+      "category": "Tabiat",
+      "level": "beginner"
+    },
+    {
+      "id": 59,
+      "arabic": "يَوْم",
+      "transliteration": "yawm",
+      "uzbek": "kun",
+      "english": "day",
+      "category": "Vaqt",
+      "level": "beginner"
+    },
+    {
+      "id": 60,
+      "arabic": "لَيْل",
+      "transliteration": "layl",
+      "uzbek": "kecha, tun",
+      "english": "night",
+      "category": "Vaqt",
+      "level": "beginner"
+    },
+    {
+      "id": 61,
+      "arabic": "أُسْبُوع",
+      "transliteration": "usbū'",
+      "uzbek": "hafta",
+      "english": "week",
+      "category": "Vaqt",
+      "level": "beginner"
+    },
+    {
+      "id": 62,
+      "arabic": "شَهْر",
+      "transliteration": "shahr",
+      "uzbek": "oy (vaqt)",
+      "english": "month",
+      "category": "Vaqt",
+      "level": "beginner"
+    },
+    {
+      "id": 63,
+      "arabic": "سَنَة",
+      "transliteration": "sana",
+      "uzbek": "yil",
+      "english": "year",
+      "category": "Vaqt",
+      "level": "beginner"
+    },
+    {
+      "id": 64,
+      "arabic": "الآن",
+      "transliteration": "al-ān",
+      "uzbek": "hozir",
+      "english": "now",
+      "category": "Vaqt",
+      "level": "beginner"
+    },
+    {
+      "id": 65,
+      "arabic": "غَدًا",
+      "transliteration": "ghadan",
+      "uzbek": "ertaga",
+      "english": "tomorrow",
+      "category": "Vaqt",
+      "level": "beginner"
+    },
+    {
+      "id": 66,
+      "arabic": "أَمْس",
+      "transliteration": "ams",
+      "uzbek": "kecha",
+      "english": "yesterday",
+      "category": "Vaqt",
+      "level": "beginner"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "id": 1,
+      "type": "letter-to-name",
+      "question": "Bu harfning nomi nima?",
+      "questionArabic": "ب",
+      "options": [
+        "Alif",
+        "Ba",
+        "Ta",
+        "Mim"
+      ],
+      "correctAnswer": "Ba",
+      "explanation": "ب — Bu 'Ba' harfi, arab alifbosining ikkinchi harfi.",
+      "category": "alphabet",
+      "level": "beginner"
+    },
+    {
+      "id": 2,
+      "type": "letter-to-name",
+      "question": "Bu harfning nomi nima?",
+      "questionArabic": "ش",
+      "options": [
+        "Sin",
+        "Shin",
+        "Sad",
+        "Dhal"
+      ],
+      "correctAnswer": "Shin",
+      "explanation": "ش — Bu 'Shin' harfi, 'sh' tovushini bildiradi.",
+      "category": "alphabet",
+      "level": "beginner"
+    },
+    {
+      "id": 3,
+      "type": "name-to-letter",
+      "question": "'Mim' harfi qaysi?",
+      "options": [
+        "ن",
+        "م",
+        "ه",
+        "و"
+      ],
+      "correctAnswer": "م",
+      "explanation": "م — 'Mim' harfi dumaloq shakli bilan ajralib turadi.",
+      "category": "alphabet",
+      "level": "beginner"
+    },
+    {
+      "id": 4,
+      "type": "letter-to-name",
+      "question": "Bu harfning nomi nima?",
+      "questionArabic": "ع",
+      "options": [
+        "Ha",
+        "Ghayn",
+        "Ayn",
+        "Fa"
+      ],
+      "correctAnswer": "Ayn",
+      "explanation": "ع — Bu 'Ayn' harfi, arab tilining maxsus tovushlaridan biri.",
+      "category": "alphabet",
+      "level": "intermediate"
+    },
+    {
+      "id": 5,
+      "type": "name-to-letter",
+      "question": "'Qaf' harfi qaysi?",
+      "options": [
+        "ف",
+        "ق",
+        "ك",
+        "غ"
+      ],
+      "correctAnswer": "ق",
+      "explanation": "ق — 'Qaf' harfi ustida ikkita nuqtasi bilan ajralib turadi.",
+      "category": "alphabet",
+      "level": "beginner"
+    },
+    {
+      "id": 6,
+      "type": "letter-to-name",
+      "question": "Bu harfning nomi nima?",
+      "questionArabic": "ط",
+      "options": [
+        "Ta (oddiy)",
+        "Ta (og'ir)",
+        "Tha",
+        "Dad"
+      ],
+      "correctAnswer": "Ta (og'ir)",
+      "explanation": "ط — Bu 'Ta' harfining og'ir shakli, 'ṭ' tovushini bildiradi.",
+      "category": "alphabet",
+      "level": "intermediate"
+    },
+    {
+      "id": 7,
+      "type": "name-to-letter",
+      "question": "'Lam' harfi qaysi?",
+      "options": [
+        "ك",
+        "ل",
+        "م",
+        "ن"
+      ],
+      "correctAnswer": "ل",
+      "explanation": "ل — 'Lam' harfi L shakliga o'xshash.",
+      "category": "alphabet",
+      "level": "beginner"
+    },
+    {
+      "id": 8,
+      "type": "letter-to-name",
+      "question": "Bu harfning nomi nima?",
+      "questionArabic": "خ",
+      "options": [
+        "Ha",
+        "Kha",
+        "Jim",
+        "Ayn"
+      ],
+      "correctAnswer": "Kha",
+      "explanation": "خ — Bu 'Kha' harfi, ustida nuqtasi bor, 'x' tovushi kabi.",
+      "category": "alphabet",
+      "level": "beginner"
+    },
+    {
+      "id": 9,
+      "type": "word-to-meaning",
+      "question": "Bu so'zning ma'nosi nima?",
+      "questionArabic": "كِتَاب",
+      "options": [
+        "daftar",
+        "kitob",
+        "qalam",
+        "sumka"
+      ],
+      "correctAnswer": "kitob",
+      "explanation": "كِتَاب (kitāb) — 'kitob' degan ma'noni anglatadi.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 10,
+      "type": "word-to-meaning",
+      "question": "Bu so'zning ma'nosi nima?",
+      "questionArabic": "شَمْس",
+      "options": [
+        "oy",
+        "yulduz",
+        "quyosh",
+        "osmon"
+      ],
+      "correctAnswer": "quyosh",
+      "explanation": "شَمْس (shams) — 'quyosh' degan ma'noni anglatadi.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 11,
+      "type": "meaning-to-word",
+      "question": "'Suv' so'zi arabcha qanday yoziladi?",
+      "options": [
+        "لَبَن",
+        "مَاء",
+        "عَصِير",
+        "شَاي"
+      ],
+      "correctAnswer": "مَاء",
+      "explanation": "مَاء (mā') — 'suv' degan ma'noni anglatadi.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 12,
+      "type": "word-to-meaning",
+      "question": "Bu so'zning ma'nosi nima?",
+      "questionArabic": "أُمّ",
+      "options": [
+        "ota",
+        "ona",
+        "aka",
+        "opa"
+      ],
+      "correctAnswer": "ona",
+      "explanation": "أُمّ (umm) — 'ona' degan ma'noni anglatadi.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 13,
+      "type": "meaning-to-word",
+      "question": "'Kitob' arabcha qanday?",
+      "options": [
+        "قَلَم",
+        "دَفْتَر",
+        "كِتَاب",
+        "مَدْرَسَة"
+      ],
+      "correctAnswer": "كِتَاب",
+      "explanation": "كِتَاب (kitāb) — 'kitob'.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 14,
+      "type": "word-to-meaning",
+      "question": "Bu so'zning ma'nosi nima?",
+      "questionArabic": "قَمَر",
+      "options": [
+        "quyosh",
+        "yulduz",
+        "oy",
+        "osmon"
+      ],
+      "correctAnswer": "oy",
+      "explanation": "قَمَر (qamar) — 'oy' degan ma'noni anglatadi.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 15,
+      "type": "word-to-meaning",
+      "question": "Bu so'zning ma'nosi nima?",
+      "questionArabic": "بَيْت",
+      "options": [
+        "maktab",
+        "masjid",
+        "bozor",
+        "uy"
+      ],
+      "correctAnswer": "uy",
+      "explanation": "بَيْت (bayt) — 'uy' degan ma'noni anglatadi.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 16,
+      "type": "meaning-to-word",
+      "question": "'Tog'' so'zi arabcha qanday?",
+      "options": [
+        "نَهْر",
+        "بَحْر",
+        "جَبَل",
+        "صَحْرَاء"
+      ],
+      "correctAnswer": "جَبَل",
+      "explanation": "جَبَل (jabal) — 'tog'' degan ma'noni anglatadi.",
+      "category": "words",
+      "level": "beginner"
+    },
+    {
+      "id": 17,
+      "type": "word-to-meaning",
+      "question": "Bu iboraning ma'nosi nima?",
+      "questionArabic": "صَبَاحُ الخَيْر",
+      "options": [
+        "Xayrli kech",
+        "Xayrli tong",
+        "Xayr",
+        "Salom"
+      ],
+      "correctAnswer": "Xayrli tong",
+      "explanation": "صَبَاحُ الخَيْر (ṣabāḥu l-khayr) — 'Xayrli tong'.",
+      "category": "phrases",
+      "level": "beginner"
+    },
+    {
+      "id": 18,
+      "type": "meaning-to-word",
+      "question": "'Katta rahmat' arabcha qanday?",
+      "options": [
+        "شُكْرًا",
+        "عَفْوًا",
+        "شُكْرًا جَزِيلًا",
+        "مَرْحَبًا"
+      ],
+      "correctAnswer": "شُكْرًا جَزِيلًا",
+      "explanation": "شُكْرًا جَزِيلًا (shukran jazīlan) — 'Katta rahmat'.",
+      "category": "phrases",
+      "level": "beginner"
+    },
+    {
+      "id": 19,
+      "type": "word-to-meaning",
+      "question": "Bu iboraning ma'nosi nima?",
+      "questionArabic": "مَعَ السَّلَامَة",
+      "options": [
+        "Salom",
+        "Xayrli tong",
+        "Xayr / Ko'rishguncha",
+        "Rahmat"
+      ],
+      "correctAnswer": "Xayr / Ko'rishguncha",
+      "explanation": "مَعَ السَّلَامَة (ma'a s-salāma) — 'Xayr, sog'-salomat boring'.",
+      "category": "phrases",
+      "level": "beginner"
+    },
+    {
+      "id": 20,
+      "type": "word-to-meaning",
+      "question": "Bu so'zning ma'nosi nima?",
+      "questionArabic": "خَمْسَة",
+      "options": [
+        "to'rt",
+        "besh",
+        "olti",
+        "yetti"
+      ],
+      "correctAnswer": "besh",
+      "explanation": "خَمْسَة (khamsa) — 'besh' raqami.",
+      "category": "words",
+      "level": "beginner"
+    }
+  ],
+  "pronunciationExercises": [
+    {
+      "id": 1,
+      "title": "Unli tovushlar",
+      "description": "Arab tilining asosiy unli tovushlari: fatha (a), kasra (i), damma (u)",
+      "items": [
+        {
+          "arabic": "بَ",
+          "romanized": "ba",
+          "uzbek": "ba"
+        },
+        {
+          "arabic": "بِ",
+          "romanized": "bi",
+          "uzbek": "bi"
+        },
+        {
+          "arabic": "بُ",
+          "romanized": "bu",
+          "uzbek": "bu"
+        },
+        {
+          "arabic": "كَ",
+          "romanized": "ka",
+          "uzbek": "ka"
+        },
+        {
+          "arabic": "كِ",
+          "romanized": "ki",
+          "uzbek": "ki"
+        },
+        {
+          "arabic": "كُ",
+          "romanized": "ku",
+          "uzbek": "ku"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Sun va Oy harflari",
+      "description": "Quyosh (shamsiyya) va oy (qamariyya) harflari bilan 'al-' artikli",
+      "items": [
+        {
+          "arabic": "الشَّمْس",
+          "romanized": "ash-shams",
+          "uzbek": "quyosh"
+        },
+        {
+          "arabic": "القَمَر",
+          "romanized": "al-qamar",
+          "uzbek": "oy"
+        },
+        {
+          "arabic": "النَّهْر",
+          "romanized": "an-nahr",
+          "uzbek": "daryo"
+        },
+        {
+          "arabic": "الكِتَاب",
+          "romanized": "al-kitāb",
+          "uzbek": "kitob"
+        },
+        {
+          "arabic": "الدَّرْس",
+          "romanized": "ad-dars",
+          "uzbek": "dars"
+        },
+        {
+          "arabic": "البَيْت",
+          "romanized": "al-bayt",
+          "uzbek": "uy"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Og'ir undoshlar",
+      "description": "Arabcha maxsus og'ir undoshlarni mashq qiling",
+      "items": [
+        {
+          "arabic": "صَ",
+          "romanized": "ṣa",
+          "uzbek": "sa (og'ir)"
+        },
+        {
+          "arabic": "ضَ",
+          "romanized": "ḍa",
+          "uzbek": "da (og'ir)"
+        },
+        {
+          "arabic": "طَ",
+          "romanized": "ṭa",
+          "uzbek": "ta (og'ir)"
+        },
+        {
+          "arabic": "ظَ",
+          "romanized": "ẓa",
+          "uzbek": "dha (og'ir)"
+        },
+        {
+          "arabic": "صَوْت",
+          "romanized": "ṣawt",
+          "uzbek": "ovoz"
+        },
+        {
+          "arabic": "ضَوْء",
+          "romanized": "ḍaw'",
+          "uzbek": "nur"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Tomoq undoshlari",
+      "description": "Tomoqdan chiqadigan tovushlar: ح, خ, ع, غ",
+      "items": [
+        {
+          "arabic": "حَ",
+          "romanized": "ḥa",
+          "uzbek": "ha (kuchli)"
+        },
+        {
+          "arabic": "خَ",
+          "romanized": "kha",
+          "uzbek": "kha"
+        },
+        {
+          "arabic": "عَ",
+          "romanized": "'a",
+          "uzbek": "ayn"
+        },
+        {
+          "arabic": "غَ",
+          "romanized": "gha",
+          "uzbek": "ghayn"
+        },
+        {
+          "arabic": "حُبّ",
+          "romanized": "ḥubb",
+          "uzbek": "muhabbat"
+        },
+        {
+          "arabic": "عَيْن",
+          "romanized": "'ayn",
+          "uzbek": "ko'z"
+        }
+      ]
+    }
+  ]
+}

@@ -24,7 +24,8 @@ class _AvatarCircle extends StatelessWidget {
                 fit: BoxFit.cover,
                 // Avatar yuklanmaguncha initials ko'rsatiladi
                 frameBuilder: (ctx, child, frame, loaded) {
-                  if (frame == null) return _InitialsCircle(user: user, size: size);
+                  if (frame == null)
+                    return _InitialsCircle(user: user, size: size);
                   return child;
                 },
                 errorBuilder: (_, __, ___) =>
@@ -96,7 +97,10 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
   bool _loading = false;
 
   Future<void> _handleSignIn() async {
-    setState(() { _error = null; _loading = true; });
+    setState(() {
+      _error = null;
+      _loading = true;
+    });
     try {
       await AuthService.instance.signInWithGoogle();
       if (mounted && AuthService.instance.isAuthenticated) {
@@ -198,7 +202,8 @@ class AuthBottomSheet extends StatelessWidget {
             children: [
               // Handle
               Container(
-                width: 40, height: 4,
+                width: 40,
+                height: 4,
                 margin: const EdgeInsets.only(bottom: 20),
                 decoration: BoxDecoration(
                     color: Colors.grey[300],
@@ -211,8 +216,8 @@ class AuthBottomSheet extends StatelessWidget {
                     size: 60, color: Color(0xFF0F766E)),
                 const SizedBox(height: 12),
                 const Text('Hisobingizga kiring',
-                    style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w700)),
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
                 const SizedBox(height: 6),
                 Text(
                   'Progressingizni saqlash va barcha\nqurilmalarda sinhronlash uchun kiring.',
@@ -230,8 +235,7 @@ class AuthBottomSheet extends StatelessWidget {
                         fontSize: 18, fontWeight: FontWeight.w700)),
                 const SizedBox(height: 4),
                 Text(user.email,
-                    style: TextStyle(
-                        fontSize: 13, color: Colors.grey[500])),
+                    style: TextStyle(fontSize: 13, color: Colors.grey[500])),
                 const SizedBox(height: 24),
                 SizedBox(
                   width: double.infinity,

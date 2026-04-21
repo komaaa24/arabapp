@@ -8,9 +8,9 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'screens/courses_screen.dart';
-import 'services/api_service.dart';
 import 'services/auth_service.dart';
 import 'widgets/auth_widgets.dart';
+import 'utils/audio_resolver.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -525,58 +525,111 @@ class HomeScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.all(18),
+            padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(22),
               gradient: const LinearGradient(
                 colors: [
                   Color(0xFF0F766E),
                   Color(0xFF0D9488),
-                  Color(0xFF0E7490)
+                  Color(0xFF0E7490),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x220F766E),
+                  blurRadius: 18,
+                  offset: Offset(0, 10),
+                ),
+              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Auth qatori
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      _greeting(),
-                      style: const TextStyle(
-                          color: Color(0xFFCCFBF1), fontSize: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 6,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.14),
+                              borderRadius: BorderRadius.circular(999),
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.16),
+                              ),
+                            ),
+                            child: Text(
+                              _greeting(),
+                              style: const TextStyle(
+                                color: Color(0xFFCCFBF1),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          const Text(
+                            'Arab tilini o\'rganing',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              height: 1.15,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text(
+                            'Har kuni oz-ozdan o\'rganib boring.',
+                            style: TextStyle(
+                              color: Color(0xFFCCFBF1),
+                              fontSize: 13,
+                              height: 1.4,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
+                    const SizedBox(width: 12),
                     RepaintBoundary(
                       child: _AuthHeaderButton(),
                     ),
                   ],
                 ),
-                const SizedBox(height: 4),
-                const Text(
-                  'Arab tilini o\'rganing',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700),
-                ),
-                const SizedBox(height: 4),
-                const Text(
-                  'Har kuni oz-ozdan o\'rganib boring.',
-                  style: TextStyle(color: Color(0xFFCCFBF1), fontSize: 13),
-                ),
-                const SizedBox(height: 12),
-                Wrap(
-                  spacing: 8,
-                  runSpacing: 8,
+                const SizedBox(height: 16),
+                Row(
                   children: [
-                    _pill(Icons.star, 'Daraja ${controller.level}'),
-                    _pill(Icons.local_fire_department,
-                        '${progress.streak} kunlik ketma-ketlik'),
-                    _pill(Icons.emoji_events, '${progress.xp} XP'),
+                    Expanded(
+                      child: _heroMetricCard(
+                        icon: Icons.school_rounded,
+                        label: 'Daraja',
+                        value: controller.level.toString(),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: _heroMetricCard(
+                        icon: Icons.local_fire_department_rounded,
+                        label: 'Ketma-ket',
+                        value: '${progress.streak} kun',
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: _heroMetricCard(
+                        icon: Icons.emoji_events_rounded,
+                        label: 'XP',
+                        value: '${progress.xp}',
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -693,19 +746,44 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _pill(IconData icon, String text) {
+  Widget _heroMetricCard({
+    required IconData icon,
+    required String label,
+    required String value,
+  }) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.2),
-        borderRadius: BorderRadius.circular(999),
+        color: Colors.white.withValues(alpha: 0.14),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.16)),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: Colors.white, size: 16),
-          const SizedBox(width: 4),
-          Text(text, style: const TextStyle(color: Colors.white, fontSize: 12)),
+          Icon(icon, color: Colors.white, size: 18),
+          const SizedBox(height: 10),
+          Text(
+            value,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w800,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: Color(0xFFCCFBF1),
+              fontSize: 11,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ],
       ),
     );
@@ -918,9 +996,6 @@ class _LetterDetailSheetState extends State<_LetterDetailSheet>
   late final AnimationController _pulseCtrl;
   late final Animation<double> _pulseAnim;
 
-  static const _recordedAudioBase = "http://213.230.110.176:9009/sounds";
-  static const _ttsAudioBase = "https://translate.google.com/translate_tts";
-
   @override
   void initState() {
     super.initState();
@@ -947,82 +1022,18 @@ class _LetterDetailSheetState extends State<_LetterDetailSheet>
     super.dispose();
   }
 
-  static const Map<int, String> _nameAudioMap = {
-    1: "alif",
-    2: "ba",
-    3: "ta",
-    4: "tha",
-    5: "jim",
-    6: "ha",
-    7: "kha",
-    8: "dal",
-    9: "zal",
-    10: "ra",
-    11: "zay",
-    12: "sin",
-    13: "shin",
-    14: "sad",
-    15: "dad",
-    16: "ta",
-    17: "za",
-    18: "ayn",
-    19: "ghayn",
-    20: "fa",
-    21: "qaf",
-    22: "kaf",
-    23: "lam",
-    24: "mim",
-    25: "nun",
-    26: "ha",
-    27: "waw",
-    28: "ya",
-  };
-
-  static const Map<int, String> _soundTextMap = {
-    1: "اَ",
-    2: "بَ",
-    3: "تَ",
-    4: "ثَ",
-    5: "جَ",
-    6: "حَ",
-    7: "خَ",
-    8: "دَ",
-    9: "ذَ",
-    10: "رَ",
-    11: "زَ",
-    12: "سَ",
-    13: "شَ",
-    14: "صَ",
-    15: "ضَ",
-    16: "طَ",
-    17: "ظَ",
-    18: "عَ",
-    19: "غَ",
-    20: "فَ",
-    21: "قَ",
-    22: "كَ",
-    23: "لَ",
-    24: "مَ",
-    25: "نَ",
-    26: "هَ",
-    27: "وَ",
-    28: "يَ",
-  };
-
-  String? _urlFor(String type) {
+  Future<String?> _urlFor(String type) async {
     final id = _asInt(widget.letter["id"]);
+    final arabicText = '${widget.letter["arabic"] ?? ''}';
 
     if (type == "sound") {
-      final sound = _soundTextMap[id] ?? "";
-      if (sound.isEmpty) return null;
-      return _ttsAudioBase +
-          "?ie=UTF-8&client=tw-ob&tl=ar&q=" +
-          Uri.encodeQueryComponent(sound);
+      return AudioResolver.ttsSoundUrlForLetterId(id);
     }
 
-    final name = _nameAudioMap[id];
-    if (name == null || name.isEmpty) return null;
-    return _recordedAudioBase + "/" + name + ".mp3";
+    return AudioResolver.resolveLetterNameAudio(
+      letterId: id,
+      arabicText: arabicText,
+    );
   }
 
   Future<void> _tap(String type) async {
@@ -1034,7 +1045,7 @@ class _LetterDetailSheetState extends State<_LetterDetailSheet>
       if (mounted) setState(() => _playingType = null);
       return;
     }
-    final url = _urlFor(type);
+    final url = await _urlFor(type);
     if (url == null) return;
     if (mounted) {
       setState(() {
@@ -1345,20 +1356,6 @@ class _AudioBtn extends StatelessWidget {
   }
 }
 
-class LessonProgressEntry {
-  const LessonProgressEntry({
-    required this.lessonId,
-    required this.title,
-    required this.xpReward,
-    required this.score,
-  });
-
-  final int lessonId;
-  final String title;
-  final int xpReward;
-  final int score;
-}
-
 class ProgressScreen extends StatefulWidget {
   const ProgressScreen(
       {super.key, required this.data, required this.controller});
@@ -1371,8 +1368,6 @@ class ProgressScreen extends StatefulWidget {
 }
 
 class _ProgressScreenState extends State<ProgressScreen> {
-  late Future<List<LessonProgressEntry>> _lessonProgressFuture;
-
   // (xp_threshold, icon, color, title)
   static const List<(int, IconData, Color, String)> medals = [
     (0, Icons.school_outlined, Color(0xFF10B981), 'Yangi boshlovchi'),
@@ -1384,47 +1379,6 @@ class _ProgressScreenState extends State<ProgressScreen> {
   ];
 
   @override
-  void initState() {
-    super.initState();
-    _lessonProgressFuture = _loadLessonProgress();
-  }
-
-  @override
-  void didUpdateWidget(covariant ProgressScreen oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.controller != widget.controller) {
-      _lessonProgressFuture = _loadLessonProgress();
-    }
-  }
-
-  Future<List<LessonProgressEntry>> _loadLessonProgress() async {
-    final userId = AuthService.instance.user?.id ?? '';
-    if (userId.isEmpty) return const [];
-
-    final scores =
-        await ApiService.instance.getCompletedLessonScores(userId: userId);
-    if (scores.isEmpty) return const [];
-
-    final lessons = await ApiService.instance.getAllLessons();
-    final byId = {for (final lesson in lessons) lesson.id: lesson};
-    final entries = <LessonProgressEntry>[];
-
-    for (final entry in scores.entries) {
-      final lesson = byId[entry.key];
-      if (lesson == null) continue;
-      entries.add(LessonProgressEntry(
-        lessonId: lesson.id,
-        title: lesson.title,
-        xpReward: lesson.xpReward,
-        score: entry.value.clamp(0, 100),
-      ));
-    }
-
-    entries.sort((a, b) => a.lessonId.compareTo(b.lessonId));
-    return entries;
-  }
-
-  @override
   Widget build(BuildContext context) {
     final state = widget.controller.state;
     final lettersCompleted = state.completedLetters.length;
@@ -1434,277 +1388,146 @@ class _ProgressScreenState extends State<ProgressScreen> {
     final medalIcon = activeMedal.$2;
     final medalTitle = activeMedal.$4;
 
-    return FutureBuilder<List<LessonProgressEntry>>(
-      future: _lessonProgressFuture,
-      builder: (context, snapshot) {
-        final lessonEntries = snapshot.data ?? const <LessonProgressEntry>[];
-        final lessonsCompleted = lessonEntries.length;
-        final averageScore = lessonEntries.isEmpty
-            ? 0
-            : (lessonEntries
-                        .map((entry) => entry.score)
-                        .reduce((a, b) => a + b) /
-                    lessonEntries.length)
-                .round();
-
-        return SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(16, 18, 16, 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return SingleChildScrollView(
+      padding: const EdgeInsets.fromLTRB(16, 18, 16, 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  const Expanded(
-                    child: _SimpleTitle(
-                      icon: Icons.bar_chart,
-                      color: Color(0xFF0F766E),
-                      title: 'Progressim',
-                      subtitle: 'O\'rganish statistikasi',
-                    ),
-                  ),
-                  OutlinedButton.icon(
-                    onPressed: () async {
-                      final confirmed = await showDialog<bool>(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: const Text('Progressni tiklash'),
-                            content: const Text(
-                                'Barcha ma\'lumotlar o\'chadi. Davom etilsinmi?'),
-                            actions: [
-                              TextButton(
-                                  onPressed: () =>
-                                      Navigator.of(context).pop(false),
-                                  child: const Text('Bekor')),
-                              FilledButton(
-                                  onPressed: () =>
-                                      Navigator.of(context).pop(true),
-                                  child: const Text('Ha, tiklash')),
-                            ],
-                          );
-                        },
+              const Expanded(
+                child: _SimpleTitle(
+                  icon: Icons.bar_chart,
+                  color: Color(0xFF0F766E),
+                  title: 'Progressim',
+                  subtitle: 'O\'rganish statistikasi',
+                ),
+              ),
+              OutlinedButton.icon(
+                onPressed: () async {
+                  final confirmed = await showDialog<bool>(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: const Text('Progressni tiklash'),
+                        content: const Text(
+                            'Barcha ma\'lumotlar o\'chadi. Davom etilsinmi?'),
+                        actions: [
+                          TextButton(
+                              onPressed: () => Navigator.of(context).pop(false),
+                              child: const Text('Bekor')),
+                          FilledButton(
+                              onPressed: () => Navigator.of(context).pop(true),
+                              child: const Text('Ha, tiklash')),
+                        ],
                       );
-
-                      if (!context.mounted) return;
-                      if (confirmed == true) {
-                        widget.controller.resetProgress();
-                        setState(() {
-                          _lessonProgressFuture = _loadLessonProgress();
-                        });
-                      }
                     },
-                    icon: const Icon(Icons.refresh),
-                    label: const Text('Reset'),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
-                  gradient: const LinearGradient(
-                      colors: [Color(0xFF0F766E), Color(0xFF059669)]),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.2),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(medalIcon, color: Colors.white, size: 32),
-                        ),
-                        const SizedBox(width: 12),
-                        Text(medalTitle,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700)),
-                      ],
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                        'Daraja ${widget.controller.level}  ·  ${state.streak} kun',
-                        style: const TextStyle(color: Color(0xFFCCFBF1))),
-                    const SizedBox(height: 4),
-                    Text('${state.xp} XP',
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700)),
-                    const SizedBox(height: 8),
-                    LinearProgressIndicator(
-                        value: widget.controller.levelProgress,
-                        minHeight: 8,
-                        backgroundColor: Colors.white24),
-                    const SizedBox(height: 4),
-                    Text(
-                        'Daraja ${widget.controller.level + 1} gacha ${widget.controller.xpToNextLevel} XP',
-                        style: const TextStyle(
-                            color: Color(0xFFCCFBF1), fontSize: 12)),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 12),
-              GridView.count(
-                crossAxisCount: 2,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                childAspectRatio: 1.55,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                children: [
-                  _StatCard(
-                      label: 'Harflar',
-                      value:
-                          '$lettersCompleted/${widget.data.arabicLetters.length}',
-                      icon: Icons.menu_book,
-                      color: const Color(0xFF2563EB)),
-                  _StatCard(
-                      label: 'XP',
-                      value: '${state.xp}',
-                      icon: Icons.emoji_events,
-                      color: const Color(0xFFD97706)),
-                  _StatCard(
-                      label: 'Darslar',
-                      value: '$lessonsCompleted ta',
-                      icon: Icons.play_lesson,
-                      color: const Color(0xFF0F766E)),
-                  _StatCard(
-                      label: 'O\'rtacha foiz',
-                      value: '$averageScore%',
-                      icon: Icons.percent,
-                      color: const Color(0xFF7C3AED)),
-                ],
-              ),
-              const SizedBox(height: 12),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: const Color(0xFFE5E7EB)),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('O\'rganish progressi',
-                        style: TextStyle(fontWeight: FontWeight.w700)),
-                    const SizedBox(height: 10),
-                    _progressLine(
-                        'Alifbo',
-                        lettersCompleted,
-                        widget.data.arabicLetters.length,
-                        const Color(0xFF2563EB)),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 12),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: const Color(0xFFE5E7EB)),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Dars natijalari',
-                        style: TextStyle(fontWeight: FontWeight.w700)),
-                    const SizedBox(height: 10),
-                    if (snapshot.connectionState == ConnectionState.waiting)
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 12),
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            color: Color(0xFF0F766E),
-                          ),
-                        ),
-                      )
-                    else if (lessonEntries.isEmpty)
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 6),
-                        child: Text(
-                          'Hali dars natijalari yo\'q',
-                          style: TextStyle(color: Color(0xFF6B7280)),
-                        ),
-                      )
-                    else
-                      ...lessonEntries.map(_lessonProgressTile),
-                  ],
-                ),
+                  );
+
+                  if (!context.mounted) return;
+                  if (confirmed == true) {
+                    widget.controller.resetProgress();
+                    setState(() {});
+                  }
+                },
+                icon: const Icon(Icons.refresh),
+                label: const Text('Reset'),
               ),
             ],
           ),
-        );
-      },
-    );
-  }
-
-  Widget _lessonProgressTile(LessonProgressEntry entry) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: const Color(0xFFF9FAFB),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFFE5E7EB)),
-      ),
-      child: Row(
-        children: [
+          const SizedBox(height: 10),
           Container(
-            width: 44,
-            height: 44,
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xFF0F766E).withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(18),
+              gradient: const LinearGradient(
+                  colors: [Color(0xFF0F766E), Color(0xFF059669)]),
             ),
-            child: const Icon(Icons.play_lesson, color: Color(0xFF0F766E)),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  entry.title,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    color: Color(0xFF111827),
-                  ),
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.2),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Icon(medalIcon, color: Colors.white, size: 32),
+                    ),
+                    const SizedBox(width: 12),
+                    Text(medalTitle,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w700)),
+                  ],
                 ),
+                const SizedBox(height: 6),
+                Text(
+                    'Daraja ${widget.controller.level}  ·  ${state.streak} kun',
+                    style: const TextStyle(color: Color(0xFFCCFBF1))),
+                const SizedBox(height: 4),
+                Text('${state.xp} XP',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700)),
+                const SizedBox(height: 8),
+                LinearProgressIndicator(
+                    value: widget.controller.levelProgress,
+                    minHeight: 8,
+                    backgroundColor: Colors.white24),
                 const SizedBox(height: 4),
                 Text(
-                  '${entry.score}%  ·  +${entry.xpReward} XP',
-                  style: const TextStyle(
-                    color: Color(0xFF6B7280),
-                    fontSize: 13,
-                  ),
-                ),
+                    'Daraja ${widget.controller.level + 1} gacha ${widget.controller.xpToNextLevel} XP',
+                    style: const TextStyle(
+                        color: Color(0xFFCCFBF1), fontSize: 12)),
               ],
             ),
           ),
-          const SizedBox(width: 12),
-          SizedBox(
-            width: 52,
-            child: Text(
-              '${entry.score}%',
-              textAlign: TextAlign.right,
-              style: const TextStyle(
-                fontWeight: FontWeight.w800,
-                color: Color(0xFF0F766E),
-              ),
+          const SizedBox(height: 12),
+          GridView.count(
+            crossAxisCount: 2,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            childAspectRatio: 1.55,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            children: [
+              _StatCard(
+                  label: 'Harflar',
+                  value:
+                      '$lettersCompleted/${widget.data.arabicLetters.length}',
+                  icon: Icons.menu_book,
+                  color: const Color(0xFF2563EB)),
+              _StatCard(
+                  label: 'XP',
+                  value: '${state.xp}',
+                  icon: Icons.emoji_events,
+                  color: const Color(0xFFD97706)),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: const Color(0xFFE5E7EB)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('O\'rganish progressi',
+                    style: TextStyle(fontWeight: FontWeight.w700)),
+                const SizedBox(height: 10),
+                _progressLine('Alifbo', lettersCompleted,
+                    widget.data.arabicLetters.length, const Color(0xFF2563EB)),
+              ],
             ),
           ),
         ],

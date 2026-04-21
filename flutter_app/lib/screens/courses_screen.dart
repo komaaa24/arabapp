@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../services/api_service.dart';
 import '../services/auth_service.dart';
+import '../utils/audio_resolver.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // COURSES SCREEN
@@ -575,15 +576,27 @@ class _LessonPlayerScreenState extends State<LessonPlayerScreen> {
     super.dispose();
   }
 
-  Future<void> _playAudio(String? url) async {
-    if (url == null || url.isEmpty) return;
+  Future<void> _playAudio(String? url, {LessonStep? step}) async {
+    final resolved = await AudioResolver.resolveLessonStepAudio(
+      providedUrl: url,
+      arabicText: step?.arabicText,
+      title: step?.title,
+      content: step?.content,
+      transcription: step?.transcription,
+    );
+    if (resolved == null || resolved.isEmpty) return;
     try {
       setState(() => _audioLoading = true);
       await _audioPlayer.stop();
-      await _audioPlayer.play(UrlSource(url));
+      await _audioPlayer.play(UrlSource(resolved));
       setState(() => _audioLoading = false);
     } catch (e) {
-      if (mounted) setState(() => _audioLoading = false);
+      if (mounted) {
+        setState(() => _audioLoading = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Audio yuklanmadi')),
+        );
+      }
     }
   }
 
@@ -607,9 +620,16 @@ class _LessonPlayerScreenState extends State<LessonPlayerScreen> {
           _loading = false;
         });
         // Birinchi step-dagi audio avtomatik ijro
-        if (_steps.isNotEmpty && _steps[0].audioUrl != null) {
+        if (_steps.isNotEmpty &&
+            AudioResolver.canResolveLessonStepAudio(
+              providedUrl: _steps[0].audioUrl,
+              arabicText: _steps[0].arabicText,
+              title: _steps[0].title,
+              content: _steps[0].content,
+              transcription: _steps[0].transcription,
+            )) {
           Future.delayed(const Duration(milliseconds: 500), () {
-            _playAudio(_steps[0].audioUrl);
+            _playAudio(_steps[0].audioUrl, step: _steps[0]);
           });
         }
       }
@@ -634,9 +654,15 @@ class _LessonPlayerScreenState extends State<LessonPlayerScreen> {
           _currentIndex++;
           // Yangi step-ga o'tganda audio avtomatik ijro
           final nextStep = _steps[_currentIndex];
-          if (nextStep.audioUrl != null) {
+          if (AudioResolver.canResolveLessonStepAudio(
+            providedUrl: nextStep.audioUrl,
+            arabicText: nextStep.arabicText,
+            title: nextStep.title,
+            content: nextStep.content,
+            transcription: nextStep.transcription,
+          )) {
             Future.delayed(const Duration(milliseconds: 300), () {
-              _playAudio(nextStep.audioUrl);
+              _playAudio(nextStep.audioUrl, step: nextStep);
             });
           }
         } else if (_exercises.isNotEmpty) {
@@ -923,7 +949,10 @@ class _LessonPlayerScreenState extends State<LessonPlayerScreen> {
                     step: _steps[_currentIndex],
                     isPlaying: _audioPlaying,
                     isLoading: _audioLoading,
-                    onPlay: () => _playAudio(_steps[_currentIndex].audioUrl),
+                    onPlay: () => _playAudio(
+                      _steps[_currentIndex].audioUrl,
+                      step: _steps[_currentIndex],
+                    ),
                     onStop: _stopAudio,
                   ),
           ),
@@ -1068,7 +1097,13 @@ class _IntroCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasAudio = step.audioUrl != null;
+    final hasAudio = AudioResolver.canResolveLessonStepAudio(
+      providedUrl: step.audioUrl,
+      arabicText: step.arabicText,
+      title: step.title,
+      content: step.content,
+      transcription: step.transcription,
+    );
     return Column(
       children: [
         const SizedBox(height: 20),
@@ -1154,7 +1189,13 @@ class _LetterCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hasAudio = step.audioUrl != null;
+    final hasAudio = AudioResolver.canResolveLessonStepAudio(
+      providedUrl: step.audioUrl,
+      arabicText: step.arabicText,
+      title: step.title,
+      content: step.content,
+      transcription: step.transcription,
+    );
     return Column(
       children: [
         const SizedBox(height: 12),

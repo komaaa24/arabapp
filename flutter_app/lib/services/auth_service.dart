@@ -17,7 +17,8 @@ const String _firebaseApiKey = 'AIzaSyCM559oJDq0hd3pBP291a9zxO9Qrbrfdjw';
 /// PHP tokeninfo bu JWT ni qabul qilishi kerak.
 Future<String?> _getFirebaseIdToken(String accessToken) async {
   try {
-    final url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp'
+    final url =
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp'
         '?key=$_firebaseApiKey';
     final body = jsonEncode({
       'requestUri': 'http://localhost',
@@ -38,7 +39,8 @@ Future<String?> _getFirebaseIdToken(String accessToken) async {
           '${firebaseToken != null ? "${firebaseToken.length}belgi" : "NULL"}');
       return firebaseToken;
     }
-    debugPrint('[Auth] Firebase xato: ${res.body.substring(0, 200.clamp(0, res.body.length))}');
+    debugPrint(
+        '[Auth] Firebase xato: ${res.body.substring(0, 200.clamp(0, res.body.length))}');
   } catch (e) {
     debugPrint('[Auth] Firebase idToken xatosi: $e');
   }
@@ -151,7 +153,8 @@ class AuthService extends ChangeNotifier {
           headers: {'Authorization': 'Bearer $savedTok'},
         ).timeout(const Duration(seconds: 6));
 
-        debugPrint('[Auth] ?route=me → ${res.statusCode}: ${res.body.length > 100 ? res.body.substring(0, 100) : res.body}');
+        debugPrint(
+            '[Auth] ?route=me → ${res.statusCode}: ${res.body.length > 100 ? res.body.substring(0, 100) : res.body}');
 
         if (res.statusCode == 200) {
           final data = jsonDecode(res.body) as Map<String, dynamic>;
@@ -210,7 +213,8 @@ class AuthService extends ChangeNotifier {
       );
       notifyListeners(); // ← darhol UI ga ko'rsatamiz
 
-      debugPrint('[Auth] Google user: id=${googleUser.id}, name=${googleUser.displayName}, email=${googleUser.email}');
+      debugPrint(
+          '[Auth] Google user: id=${googleUser.id}, name=${googleUser.displayName}, email=${googleUser.email}');
 
       // ── Tokenlarni olish ───────────────────────────────────────────────
       String? idToken;
@@ -218,7 +222,7 @@ class AuthService extends ChangeNotifier {
       try {
         // 1-urinish: to'g'ridan-to'g'ri
         var auth = await googleUser.authentication;
-        idToken     = auth.idToken;
+        idToken = auth.idToken;
         accessToken = auth.accessToken;
         debugPrint('[Auth] 1-urinish → idToken: '
             '${idToken != null ? "${idToken.length}b" : "NULL"}, '
@@ -229,8 +233,8 @@ class AuthService extends ChangeNotifier {
         if (idToken == null || idToken.isEmpty || !idToken.startsWith('eyJ')) {
           debugPrint('[Auth] idToken null – cache tozalanmoqda...');
           await googleUser.clearAuthCache();
-          auth        = await googleUser.authentication;
-          idToken     = auth.idToken;
+          auth = await googleUser.authentication;
+          idToken = auth.idToken;
           accessToken = auth.accessToken;
           debugPrint('[Auth] 2-urinish → idToken: '
               '${idToken != null ? "${idToken.length}b" : "NULL"}');
@@ -239,12 +243,15 @@ class AuthService extends ChangeNotifier {
         // 3-urinish: Firebase REST API orqali accessToken → idToken
         // Google idToken null bo'lganda ham accessToken mavjud bo'ladi
         if ((idToken == null || !idToken.startsWith('eyJ')) &&
-            accessToken != null && accessToken.isNotEmpty) {
-          debugPrint('[Auth] idToken null – Firebase REST API sinab ko\'rilmoqda...');
+            accessToken != null &&
+            accessToken.isNotEmpty) {
+          debugPrint(
+              '[Auth] idToken null – Firebase REST API sinab ko\'rilmoqda...');
           final firebaseToken = await _getFirebaseIdToken(accessToken);
           if (firebaseToken != null && firebaseToken.startsWith('eyJ')) {
             idToken = firebaseToken;
-            debugPrint('[Auth] Firebase idToken olindi: ${idToken.length}belgi');
+            debugPrint(
+                '[Auth] Firebase idToken olindi: ${idToken.length}belgi');
           }
         }
       } catch (e) {
@@ -265,11 +272,12 @@ class AuthService extends ChangeNotifier {
       try {
         final jsonBody = <String, dynamic>{
           // PHP line 5 o'qiydi: $body['access_token'] — shuning uchun JWT ni shu yerga
-          if (hasJwt) 'access_token': idToken, // PHP tokeninfo?id_token=eyJ... ✅
-          if (hasJwt) 'id_token': idToken,     // standart maydon ham
-          'email':     googleUser.email,
-          'name':      googleUser.displayName ?? '',
-          'avatar':    googleUser.photoUrl    ?? '',
+          if (hasJwt)
+            'access_token': idToken, // PHP tokeninfo?id_token=eyJ... ✅
+          if (hasJwt) 'id_token': idToken, // standart maydon ham
+          'email': googleUser.email,
+          'name': googleUser.displayName ?? '',
+          'avatar': googleUser.photoUrl ?? '',
           'google_id': googleUser.id,
         };
         debugPrint('[Auth] PHP POST → '
@@ -296,28 +304,32 @@ class AuthService extends ChangeNotifier {
             if (extracted.isNotEmpty) token = extracted;
 
             final root = (data['data'] as Map<String, dynamic>?) ??
-                (data['user'] as Map<String, dynamic>?) ?? data;
+                (data['user'] as Map<String, dynamic>?) ??
+                data;
 
             // PHP user_id (UUID) → Google ID dan USTUN
             // Har akkaunt uchun bir xil ID saqlanadi
             final phpUserId = '${root['user_id'] ?? root['id'] ?? ''}';
-            final phpName   = '${root['name'] ?? ''}';
+            final phpName = '${root['name'] ?? ''}';
             final phpAvatar = '${root['avatar'] ?? root['picture'] ?? ''}';
 
             _user = AuthUser(
-              id:     phpUserId.isNotEmpty ? phpUserId : googleUser.id,
-              email:  '${root['email'] ?? googleUser.email}',
-              name:   phpName.isNotEmpty   ? phpName   : googleUser.displayName,
+              id: phpUserId.isNotEmpty ? phpUserId : googleUser.id,
+              email: '${root['email'] ?? googleUser.email}',
+              name: phpName.isNotEmpty ? phpName : googleUser.displayName,
               avatar: phpAvatar.isNotEmpty ? phpAvatar : googleUser.photoUrl,
             );
-            debugPrint('[Auth] PHP user_id: ${_user!.id}, name: ${_user!.name}');
+            debugPrint(
+                '[Auth] PHP user_id: ${_user!.id}, name: ${_user!.name}');
           } else {
             // PHP "invalid token" → Google ID bilan davom etamiz
-            debugPrint('[Auth] PHP xatolik (${data['error']}) → Google ID: ${googleUser.id}');
+            debugPrint(
+                '[Auth] PHP xatolik (${data['error']}) → Google ID: ${googleUser.id}');
           }
         }
       } catch (e) {
-        debugPrint('[Auth] PHP google_auth error: $e — Google user ishlatiladi');
+        debugPrint(
+            '[Auth] PHP google_auth error: $e — Google user ishlatiladi');
         // PHP xatolik bo'lsa — Google ma'lumotlari bilan davom etamiz
       }
 
@@ -332,7 +344,8 @@ class AuthService extends ChangeNotifier {
       );
       _user = finalUser;
 
-      debugPrint('[Auth] Saving user: name=${_user?.name}, avatar=${_user?.avatar}');
+      debugPrint(
+          '[Auth] Saving user: name=${_user?.name}, avatar=${_user?.avatar}');
 
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString(_jwtKey, token);

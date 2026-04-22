@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 
@@ -475,7 +475,7 @@ class _AuthHeaderButtonState extends State<_AuthHeaderButton> {
           : Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: const Row(
@@ -1756,39 +1756,6 @@ class _InfoBox extends StatelessWidget {
   }
 }
 
-class _ResultStat extends StatelessWidget {
-  const _ResultStat({
-    required this.label,
-    required this.value,
-    required this.color,
-    required this.icon,
-  });
-
-  final String label;
-  final String value;
-  final Color color;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        children: [
-          Icon(icon, color: color, size: 18),
-          const SizedBox(height: 4),
-          Text(value,
-              style: TextStyle(color: color, fontWeight: FontWeight.w700)),
-          Text(label,
-              style: const TextStyle(fontSize: 12, color: Color(0xFF6B7280))),
-        ],
-      ),
-    );
-  }
-}
 
 enum ContentFilter { all, learned, unlearned }
 
@@ -1805,12 +1772,3 @@ int _asInt(dynamic value) {
   return int.tryParse('$value') ?? 0;
 }
 
-bool _containsArabic(String text) => RegExp(r'[\u0600-\u06FF]').hasMatch(text);
-
-List<Map<String, dynamic>> _toMapList(dynamic value) {
-  if (value is! List) return const [];
-  return value
-      .whereType<Map>()
-      .map((item) => Map<String, dynamic>.from(item))
-      .toList(growable: false);
-}

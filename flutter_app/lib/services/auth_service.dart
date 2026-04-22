@@ -81,11 +81,13 @@ class AuthUser {
       (name != null && name!.isNotEmpty) ? name! : email.split('@').first;
 
   String get initials {
-    if (name != null && name!.isNotEmpty) {
-      final parts = name!.trim().split(' ');
-      if (parts.length >= 2)
+    final n = name;
+    if (n != null && n.isNotEmpty) {
+      final parts = n.trim().split(' ');
+      if (parts.length >= 2) {
         return '${parts[0][0]}${parts[1][0]}'.toUpperCase();
-      return name![0].toUpperCase();
+      }
+      return n[0].toUpperCase();
     }
     return email[0].toUpperCase();
   }
@@ -222,7 +224,7 @@ class AuthService extends ChangeNotifier {
         debugPrint('[Auth] 1-urinish → idToken: '
             '${idToken != null ? "${idToken.length}b" : "NULL"}, '
             'accessToken: ${accessToken != null ? "${accessToken.length}b" : "NULL"}, '
-            'serverAuthCode: ${googleUser.serverAuthCode != null ? "mavjud" : "yo\'q"}');
+            'serverAuthCode: ${googleUser.serverAuthCode != null ? "mavjud" : "yo`q"}');
 
         // 2-urinish: cache tozalab qayta (idToken null bo'lsa)
         if (idToken == null || idToken.isEmpty || !idToken.startsWith('eyJ')) {
@@ -255,8 +257,9 @@ class AuthService extends ChangeNotifier {
 
       final bool hasJwt =
           idToken != null && idToken.isNotEmpty && idToken.startsWith('eyJ');
-      debugPrint('[Auth] Natija: hasJwt=$hasJwt, '
-          'accessToken=${accessToken != null ? "${accessToken!.length}b" : "NULL"}');
+      final int jwtLen = idToken != null ? idToken.length : 0;
+      debugPrint('[Auth] Natija: hasJwt=$hasJwt jwtLen=${jwtLen}b, '
+          'accessToken=${accessToken != null ? "${accessToken.length}b" : "NULL"}');
 
       // ── PHP ?route=google_auth ─────────────────────────────────────────
       // PHP line 5: $access_token = $body['access_token']
@@ -276,7 +279,7 @@ class AuthService extends ChangeNotifier {
           'google_id': googleUser.id,
         };
         debugPrint('[Auth] PHP POST → '
-            '${hasJwt ? "JWT=${idToken!.length}belgi access_token va id_token maydonda" : "JWT YOQ — faqat email/name"}');
+            '${hasJwt ? "JWT=${jwtLen}belgi access_token va id_token maydonda" : "JWT YOQ — faqat email/name"}');
 
         final res = await http
             .post(

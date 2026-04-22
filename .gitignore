@@ -22,8 +22,8 @@ google auth/.env.*
 google auth/.env.local
 !google auth/.env.example
 
-# Maxfiy Dart config (API URL, Firebase key, Google Client ID)
-flutter_app/lib/config/app_secrets.dart
+# app_secrets.dart commit qilinadi (defaultValue lar bor)
+# Haqiqiy maxfiy qiymatlar uchun --dart-define ishlatiladi
 
 # Google services (API keys bor)
 flutter_app/android/app/google-services.json

@@ -80,7 +80,7 @@ class LessonStep {
 
   factory LessonStep.fromJson(Map<String, dynamic> j) {
     // Audio URL ni tozalash — bo'sh fayl nomli URL-larni filtrlash
-    String? _fixAudio(dynamic raw) {
+    String? fixAudio(dynamic raw) {
       if (raw == null) return null;
       final url = '$raw'.trim();
       if (url.isEmpty) return null;
@@ -101,9 +101,9 @@ class LessonStep {
       orderIndex: _int(j['order_index']),
       arabicText: j['arabic_text'] as String?,
       transcription: j['transcription'] as String?,
-      audioUrl: _fixAudio(j['audio']) ??
-          _fixAudio(j['audio_letter']) ??
-          _fixAudio(j['audio_url']),
+      audioUrl: fixAudio(j['audio']) ??
+          fixAudio(j['audio_letter']) ??
+          fixAudio(j['audio_url']),
     );
   }
 }
@@ -474,7 +474,7 @@ class ApiService {
   // ─── Internal ───
 
   String _scopeUser(String? userId) {
-    final normalized = '${userId ?? ''}'.trim();
+    final normalized = (userId ?? '').trim();
     if (normalized.isEmpty) return 'guest';
     return normalized.replaceAll(RegExp(r'[^a-zA-Z0-9_]'), '_');
   }

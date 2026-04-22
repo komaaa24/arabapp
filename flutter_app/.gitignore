@@ -47,7 +47,6 @@ app.*.map.json
 # ── Maxfiy ma'lumotlar — git ga YUKLANMAYDI ──────────────────────────
 # Haqiqiy qiymatlar shu fayllarda. .example fayllardan nusxalang.
 .env
-lib/config/app_secrets.dart
 
 # Google services (API key va client ID lar bor)
 android/app/google-services.json

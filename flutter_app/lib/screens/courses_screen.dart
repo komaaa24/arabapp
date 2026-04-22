@@ -140,7 +140,7 @@ class _CourseCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.06),
+              color: Colors.black.withValues(alpha: 0.06),
               blurRadius: 12,
               offset: const Offset(0, 3),
             ),
@@ -154,7 +154,7 @@ class _CourseCard extends StatelessWidget {
                 width: 58,
                 height: 58,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF0F766E).withOpacity(0.12),
+                  color: const Color(0xFF0F766E).withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Center(
@@ -432,12 +432,12 @@ class _LessonTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: isDone
-                ? const Color(0xFF10B981).withOpacity(0.4)
+                ? const Color(0xFF10B981).withValues(alpha: 0.4)
                 : Colors.transparent,
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -452,7 +452,7 @@ class _LessonTile extends StatelessWidget {
                 width: 42,
                 height: 42,
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.12),
+                  color: color.withValues(alpha: 0.12),
                   shape: BoxShape.circle,
                 ),
                 child: Center(
@@ -1153,7 +1153,7 @@ class _IntroCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, 3))
             ],
@@ -1212,7 +1212,7 @@ class _LetterCard extends StatelessWidget {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                        color: const Color(0xFF0F766E).withOpacity(0.2),
+                        color: const Color(0xFF0F766E).withValues(alpha: 0.2),
                         blurRadius: 24,
                         spreadRadius: 4)
                   ],
@@ -1241,7 +1241,7 @@ class _LetterCard extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                            color: const Color(0xFF0F766E).withOpacity(0.4),
+                            color: const Color(0xFF0F766E).withValues(alpha: 0.4),
                             blurRadius: 10,
                             offset: const Offset(0, 3))
                       ],
@@ -1285,7 +1285,7 @@ class _LetterCard extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF0F766E).withOpacity(0.1),
+                  color: const Color(0xFF0F766E).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -1322,7 +1322,7 @@ class _LetterCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 10,
                   offset: const Offset(0, 3))
             ],
@@ -1378,8 +1378,8 @@ class _AudioButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bg = light
-        ? Colors.white.withOpacity(0.25)
-        : const Color(0xFF0F766E).withOpacity(0.1);
+        ? Colors.white.withValues(alpha: 0.25)
+        : const Color(0xFF0F766E).withValues(alpha: 0.1);
     final fg = light ? Colors.white : const Color(0xFF0F766E);
 
     return GestureDetector(
@@ -1392,12 +1392,12 @@ class _AudioButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: isPlaying
               ? (light
-                  ? Colors.white.withOpacity(0.35)
-                  : const Color(0xFF0F766E).withOpacity(0.18))
+                  ? Colors.white.withValues(alpha: 0.35)
+                  : const Color(0xFF0F766E).withValues(alpha: 0.18))
               : bg,
           borderRadius: BorderRadius.circular(label != null ? 30 : 50),
           border: Border.all(
-            color: fg.withOpacity(0.4),
+            color: fg.withValues(alpha: 0.4),
             width: 1.5,
           ),
         ),
@@ -1522,7 +1522,7 @@ class _ExerciseView extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black.withOpacity(0.05),
+                    color: Colors.black.withValues(alpha: 0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 3))
               ],

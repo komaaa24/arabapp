@@ -213,8 +213,9 @@ class AudioResolver {
     final uri = Uri.tryParse(value);
     if (uri == null) return null;
     if (uri.hasScheme) return value;
-    if (value.startsWith('/sounds/'))
+    if (value.startsWith('/sounds/')) {
       return 'http://213.230.110.176:9009$value';
+    }
     return null;
   }
 

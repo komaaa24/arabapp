@@ -24,8 +24,9 @@ class _AvatarCircle extends StatelessWidget {
                 fit: BoxFit.cover,
                 // Avatar yuklanmaguncha initials ko'rsatiladi
                 frameBuilder: (ctx, child, frame, loaded) {
-                  if (frame == null)
+                  if (frame == null) {
                     return _InitialsCircle(user: user, size: size);
+                  }
                   return child;
                 },
                 errorBuilder: (_, __, ___) =>

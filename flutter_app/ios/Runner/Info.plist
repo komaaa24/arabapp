@@ -47,9 +47,9 @@
 	<true/>
 
 	<key>GIDClientID</key>
-	<string>$(GID_CLIENT_ID)</string>
+	<string>450701745537-ladueqi55rioo7gfo773u4ddnkc8hg21.apps.googleusercontent.com</string>
 	<key>GIDServerClientID</key>
-	<string>$(GID_SERVER_CLIENT_ID)</string>
+	<string>450701745537-3cc3mks20uu1p1oghck0rpo9cjnnlb8j.apps.googleusercontent.com</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -57,7 +57,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>$(GOOGLE_REVERSED_CLIENT_ID)</string>
+				<string>com.googleusercontent.apps.450701745537-ladueqi55rioo7gfo773u4ddnkc8hg21</string>
 			</array>
 		</dict>
 	</array>

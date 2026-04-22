@@ -121,9 +121,14 @@ class AuthService extends ChangeNotifier {
   bool get isLoading => _isLoading;
   bool get isAuthenticated => _user != null;
 
-  // serverClientId = Web client ID (type 3, google-services.json) — idToken uchun
+  /// iOS: `clientId` va `serverClientId` **null** — `Info.plist` dagi `GIDClientID` +
+  /// `GIDServerClientID` ishlatiladi (Dart + plist aralashmasin, invalid_audience yo'qoladi).
+  /// Android: `serverClientId` = Web client; Android client `google-services.json` dan.
   final _googleSignIn = GoogleSignIn(
-    serverClientId: AppSecrets.googleServerClientId,
+    clientId: null,
+    serverClientId: (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS)
+        ? null
+        : AppSecrets.googleServerClientId,
     scopes: ['email', 'profile'],
   );
 
@@ -237,8 +242,7 @@ class AuthService extends ChangeNotifier {
               '${idToken != null ? "${idToken.length}b" : "NULL"}');
         }
 
-        // 3-urinish: Firebase REST API orqali accessToken → idToken
-        // Google idToken null bo'lganda ham accessToken mavjud bo'ladi
+        // 3-urinish: Firebase REST API — accessToken → id_token (JWT)
         if ((idToken == null || !idToken.startsWith('eyJ')) &&
             accessToken != null &&
             accessToken.isNotEmpty) {

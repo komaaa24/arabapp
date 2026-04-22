@@ -1,20 +1,21 @@
 {
   "project_info": {
-    "project_number": "1044392240238",
-    "project_id": "sms-service-44c13",
-    "storage_bucket": "sms-service-44c13.appspot.com"
+    "project_number": "450701745537",
+    "project_id": "arabtili-87278",
+    "storage_bucket": "arabtili-87278.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1044392240238:android:arabtili",
+        "mobilesdk_app_id": "1:450701745537:android:arabtili",
         "android_client_info": {
-          "package_name": "com.arabtili.flutter_app"
+          "package_name": "com.arabtili.flutter_app",
+          "certificate_hash": "fec588ad5c74d3da82e6916791f40bd51b738611"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1044392240238-6bd5ppe5s15ml5u2oge1ln6ik1ngsljv.apps.googleusercontent.com",
+          "client_id": "450701745537-ladueqi55rioo7gfo773u4ddnkc8hg21.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.arabtili.flutter_app",
@@ -22,7 +23,7 @@
           }
         },
         {
-          "client_id": "1044392240238-vv8fva4c0qhptlftp8u8760veorhcjb2.apps.googleusercontent.com",
+          "client_id": "450701745537-3cc3mks20uu1p1oghck0rpo9cjnnlb8j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1044392240238-vv8fva4c0qhptlftp8u8760veorhcjb2.apps.googleusercontent.com",
+              "client_id": "450701745537-3cc3mks20uu1p1oghck0rpo9cjnnlb8j.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

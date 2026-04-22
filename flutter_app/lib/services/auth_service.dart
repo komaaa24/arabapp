@@ -3,15 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import '../config/app_secrets.dart';
 
-// PHP backend — global, istalgan joydan ishlaydi
-const String _phpUrl = 'http://luxcontent.uz/arab.php';
-const String _jwtKey = 'arabtili_jwt';
+const String _phpUrl  = AppSecrets.phpBaseUrl;
+const String _jwtKey  = 'arabtili_jwt';
 const String _userKey = 'arabtili_user';
-
-// Firebase REST API — Google accessToken → Firebase idToken (JWT)
-// Bu Google idToken null bo'lganda fallback sifatida ishlatiladi
-const String _firebaseApiKey = 'AIzaSyCM559oJDq0hd3pBP291a9zxO9Qrbrfdjw';
 
 /// Google accessToken yordamida Firebase idToken (JWT) oladi.
 /// PHP tokeninfo bu JWT ni qabul qilishi kerak.
@@ -19,7 +15,7 @@ Future<String?> _getFirebaseIdToken(String accessToken) async {
   try {
     final url =
         'https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp'
-        '?key=$_firebaseApiKey';
+        '?key=${AppSecrets.firebaseApiKey}';
     final body = jsonEncode({
       'requestUri': 'http://localhost',
       'postBody': 'access_token=$accessToken&providerId=google.com',
@@ -125,8 +121,7 @@ class AuthService extends ChangeNotifier {
 
   // serverClientId = Web client ID (type 3, google-services.json) — idToken uchun
   final _googleSignIn = GoogleSignIn(
-    serverClientId:
-        '1044392240238-vv8fva4c0qhptlftp8u8760veorhcjb2.apps.googleusercontent.com',
+    serverClientId: AppSecrets.googleServerClientId,
     scopes: ['email', 'profile'],
   );
 

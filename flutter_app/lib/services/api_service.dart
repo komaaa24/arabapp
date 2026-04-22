@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import '../config/app_secrets.dart';
 
 /// API model-lari
 
@@ -142,7 +143,7 @@ int _int(dynamic v) {
 /// API xizmat — caching va xato boshqarish bilan
 
 class ApiService {
-  static const _base = 'http://luxcontent.uz/arab.php';
+  static const _base = AppSecrets.phpBaseUrl;
   static const _cacheTtl = Duration(hours: 6);
   static final ApiService instance = ApiService._();
   ApiService._();
@@ -356,11 +357,11 @@ class ApiService {
   // ─── Progress endpoints ───
   //
   // PHP kutgan format (Postman da ishlagan):
-  //   POST http://luxcontent.uz/arab.php?route=complete_lesson
+  //   POST {AppSecrets.phpBaseUrl}?route=complete_lesson
   //   Content-Type: application/json
   //   Body: { "user_id": "uuid", "lesson_id": 1, "correct": 2, "total": 5 }
   //
-  //   POST http://luxcontent.uz/arab.php?route=answer
+  //   POST {AppSecrets.phpBaseUrl}?route=answer
   //   Content-Type: application/json
   //   Body: { "user_id": "uuid", "exercise_id": 1, "answer": "ب" }
 

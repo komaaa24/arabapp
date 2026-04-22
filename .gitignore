@@ -1,8 +1,38 @@
 node_modules/
 dist/
+
+# ── Maxfiy ma'lumotlar — git ga YUKLANMAYDI ──────────────────────────
+# Ildiz papka
 .env
 .env.*
+.env.local
+.env.production
+.env.development
 !.env.example
+
+# Flutter app
+flutter_app/.env
+flutter_app/.env.*
+flutter_app/.env.local
+!flutter_app/.env.example
+
+# Google auth (Node.js backend) — DB parol, JWT secret bor!
+google auth/.env
+google auth/.env.*
+google auth/.env.local
+!google auth/.env.example
+
+# Maxfiy Dart config (API URL, Firebase key, Google Client ID)
+flutter_app/lib/config/app_secrets.dart
+
+# Google services (API keys bor)
+flutter_app/android/app/google-services.json
+flutter_app/ios/Runner/GoogleService-Info.plist
+
+# PHP backend — agar server fayllar bo'lsa
+*.php.bak
+arab_users.json
+arab_progress.json
 
 # Flutter build outputs
 flutter_app/build/
@@ -14,3 +44,4 @@ flutter_app/.flutter-plugins-dependencies
 .idea/
 .vscode/
 .DS_Store
+Thumbs.db
